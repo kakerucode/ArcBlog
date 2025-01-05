@@ -30,8 +30,8 @@ struct MainView: View {
             .navigationBarTitle("", displayMode: .inline)
             .navigationDestination(for: BlogListItem.self) { item in
                 if let slug: String = item.slug,
-                   let baseURL: URL = URL(string: EndPoint.baseHost) {
-                    ArticleView(url: baseURL.appendingPathComponent(slug))
+                   let baseURL: URL = URL(string: EndPoint.baseHost)?.appending(path: "/zh") {
+                    ArticleView(url: baseURL.appending(path: slug))
                         .navigationTitle(item.title)
                 }
             }

@@ -19,7 +19,7 @@ enum EndPoint: String {
         guard let baseURL: URL = URL(string: EndPoint.baseHost) else {
             fatalError("Can not set up base url.")
         }
-        return baseURL.appendingPathComponent(self.rawValue)
+        return baseURL.appending(path: self.rawValue)
     }
 }
 
